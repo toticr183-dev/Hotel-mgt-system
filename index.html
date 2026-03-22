@@ -2,1267 +2,1071 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Everest Hotel | 5-Star Luxury in Addis Ababa</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts - Luxury Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Grand Everest Hotel | Luxury Hotel in Addis Ababa | Grade 11NC Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: #faf9f7;
-            color: #2c3e50;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-        
-        /* ===== LUXURY HEADER ===== */
-        header {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+
+        /* ===== FIXED NAVIGATION WITH HAMBURGER ===== */
+        .fixed-nav {
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 0;
+            transition: all 0.3s ease;
         }
-        
-        nav {
+
+        .fixed-nav.scrolled {
+            padding: 8px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.8rem 5%;
         }
-        
-        .hotel-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #c4a35a, #d4af37);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-        
-        .logo-text {
-            line-height: 1.2;
-        }
-        
-        .logo-text h1 {
+
+        .nav-logo h2 {
             font-size: 1.6rem;
-            color: #1e3c72;
-            margin: 0;
-            letter-spacing: 1px;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .logo-text p {
-            font-size: 0.7rem;
-            color: #d4af37;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+
+        .nav-logo i {
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
+
         .nav-links {
             display: flex;
+            gap: 8px;
             list-style: none;
-            gap: 2.5rem;
-            align-items: center;
         }
-        
-        .nav-links a {
+
+        .nav-links li a {
             text-decoration: none;
-            color: #2c3e50;
+            padding: 10px 20px;
+            border-radius: 40px;
             font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            position: relative;
+            transition: all 0.3s;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #c4a35a, #d4af37);
-            transition: width 0.3s ease;
+
+        .nav-links li a i {
+            font-size: 1rem;
         }
-        
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        .nav-links a:hover {
-            color: #d4af37;
-        }
-        
-        .btn-reserve {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white !important;
-            padding: 0.7rem 1.8rem !important;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        
-        .btn-reserve:hover {
+
+        .nav-links li a:hover {
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(30,60,114,0.2);
         }
-        
-        .btn-reserve::after {
-            display: none !important;
+
+        .nav-links li a.active {
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(196,154,108,0.3);
         }
-        
-        .mobile-menu-btn {
+
+        .hamburger {
             display: none;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            padding: 80px 25px 30px;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
             background: none;
             border: none;
-            color: #1e3c72;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        
-        /* ===== HERO SECTION ===== */
-        .hero {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-        
-        .hero-slider {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        
-        .slide.active {
-            opacity: 1;
-        }
-        
-        .slide-1 { background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
-        .slide-2 { background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
-        .slide-3 { background-image: url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-        }
-        
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 2;
-            width: 100%;
-            padding: 0 20px;
-        }
-        
-        .hero-subtitle {
-            font-size: 1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero-title {
-            font-size: 5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-        
-        .hero-btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-        
-        .hero-btn-primary {
-            background: linear-gradient(135deg, #d4af37, #c4a35a);
-            color: #1e3c72;
-        }
-        
-        .hero-btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-        }
-        
-        .hero-btn-outline {
-            border: 2px solid white;
-            color: white;
-            background: transparent;
-        }
-        
-        .hero-btn-outline:hover {
-            background: white;
-            color: #1e3c72;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* ===== BOOKING FORM ===== */
-        .booking-bar {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-            max-width: 1200px;
-            margin: -50px auto 50px;
-            padding: 30px;
-            position: relative;
-            z-index: 10;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .booking-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        
-        .booking-field {
-            position: relative;
-        }
-        
-        .booking-field label {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .booking-field input,
-        .booking-field select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #f0f0f0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .booking-field input:focus,
-        .booking-field select:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
-        
-        .booking-btn {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            height: 100%;
-            padding: 0 30px;
-            font-size: 1rem;
-        }
-        
-        .booking-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(30,60,114,0.2);
-        }
-        
-        /* ===== ROOMS SECTION ===== */
-        .rooms-section {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, #faf9f7, #fff);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-subtitle {
-            color: #d4af37;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-        
-        .section-description {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        
-        .rooms-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .room-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-        
-        .room-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 50px rgba(212, 175, 55, 0.15);
-        }
-        
-        .room-image {
-            height: 280px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .room-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #d4af37, #c4a35a);
-            color: #1e3c72;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .room-info {
-            padding: 25px;
-        }
-        
-        .room-title {
             font-size: 1.8rem;
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-        
-        .room-features {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .room-features i {
-            color: #d4af37;
-            margin-right: 5px;
-        }
-        
-        .room-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-        
-        .room-price span {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 400;
-        }
-        
-        .room-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .room-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(30,60,114,0.2);
-        }
-        
-        /* ===== AMENITIES SECTION ===== */
-        .amenities {
-            padding: 80px 5%;
-            background: #1e3c72;
-            color: white;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto 0;
-        }
-        
-        .amenity-card {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .amenity-card:hover {
-            background: rgba(212, 175, 55, 0.15);
-            transform: translateY(-10px);
-        }
-        
-        .amenity-card i {
-            font-size: 3rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-        }
-        
-        .amenity-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .amenity-card p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        /* ===== RESTAURANT SECTION ===== */
-        .restaurant {
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        
-        .restaurant-image {
-            height: 500px;
-            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0 30px 50px rgba(0,0,0,0.1);
-        }
-        
-        .restaurant-content h2 {
-            font-size: 2.5rem;
-            color: #1e3c72;
-            margin-bottom: 20px;
-        }
-        
-        .restaurant-content p {
             color: #666;
-            line-height: 1.8;
-            margin-bottom: 30px;
         }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+
+        .mobile-nav-links {
+            list-style: none;
+            margin-top: 30px;
         }
-        
-        .menu-item {
-            padding: 15px;
-            border-bottom: 1px solid #f0f0f0;
+
+        .mobile-nav-links li {
+            margin-bottom: 15px;
         }
-        
-        .menu-item h4 {
-            color: #1e3c72;
-            margin-bottom: 5px;
-        }
-        
-        .menu-item p {
-            color: #d4af37;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, #faf9f7, #fff);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto 0;
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(212, 175, 55, 0.1);
-            font-family: serif;
-        }
-        
-        .testimonial-text {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
+
+        .mobile-nav-links li a {
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            border-radius: 12px;
+            transition: all 0.3s;
+            background: #f8f9fa;
         }
-        
-        .author-avatar {
+
+        .mobile-nav-links li a i {
+            width: 25px;
+            color: #c49a6c;
+            font-size: 1.2rem;
+        }
+
+        .mobile-nav-links li a:hover,
+        .mobile-nav-links li a.active {
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            color: white;
+        }
+
+        .mobile-nav-links li a:hover i,
+        .mobile-nav-links li a.active i {
+            color: white;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600') center/cover;
+            opacity: 0.2;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .header h1 span {
+            color: #c49a6c;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SUBMISSION BANNER ===== */
+        .submission-banner {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2632 100%);
+            padding: 20px 0;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .submission-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .submission-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #d4af37, #c4a35a);
+            background: rgba(196,154,108,0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: #1e3c72;
-            font-weight: bold;
         }
-        
-        .author-info h4 {
-            color: #1e3c72;
+
+        .submission-icon i {
+            font-size: 2rem;
+            color: #c49a6c;
+        }
+
+        .submission-text h3 {
+            color: white;
+            font-size: 1.3rem;
             margin-bottom: 5px;
         }
-        
-        .author-info p {
-            color: #d4af37;
-            font-size: 0.8rem;
+
+        .submission-text p {
+            color: #adb5bd;
+            margin-bottom: 3px;
         }
-        
-        /* ===== CTA SECTION ===== */
-        .cta {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, #d4af37, #c4a35a);
+
+        .submission-text .submission-members {
+            color: #c49a6c;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ===== ROOMS SECTION ===== */
+        .rooms {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .section-header {
             text-align: center;
-            color: #1e3c72;
+            margin-bottom: 50px;
         }
-        
-        .cta h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
-        
-        .cta p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+
+        .section-header h2 .highlight {
+            color: #c49a6c;
         }
-        
-        .cta-btn {
-            background: #1e3c72;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #6c757d;
         }
-        
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 30px rgba(30,60,114,0.2);
+
+        .title-shape {
+            width: 80px;
+            height: 3px;
+            background: #c49a6c;
+            margin: 20px auto 0;
+            border-radius: 3px;
         }
-        
-        /* ===== FOOTER ===== */
-        footer {
-            background: #1a1a1a;
-            padding: 60px 5% 30px;
-            color: #999;
-        }
-        
-        .footer-grid {
+
+        .rooms-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        
-        .footer-col h3 {
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-image {
+            height: 250px;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .room-image i {
+            font-size: 5rem;
             color: white;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
         }
-        
-        .footer-col ul {
-            list-style: none;
+
+        .room-info {
+            padding: 25px;
         }
-        
-        .footer-col li {
+
+        .room-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
-        
-        .footer-col a {
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s ease;
+
+        .room-features {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #666;
+            font-size: 0.9rem;
         }
-        
-        .footer-col a:hover {
-            color: #d4af37;
+
+        .room-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c49a6c;
+            margin: 15px 0;
         }
-        
-        .footer-col i {
-            width: 25px;
-            color: #d4af37;
+
+        .room-price span {
+            font-size: 0.9rem;
+            color: #666;
         }
-        
-        .footer-bottom {
+
+        .badge {
+            display: inline-block;
+            background: #c49a6c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== AMENITIES SECTION ===== */
+        .amenities {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .amenity-card {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #333;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            transition: all 0.3s;
         }
-        
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .amenity-card i {
+            font-size: 3rem;
+            color: #c49a6c;
+            margin-bottom: 15px;
+        }
+
+        .amenity-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .amenity-card p {
+            color: #666;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial-card i {
+            font-size: 2rem;
+            color: #c49a6c;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author h4 {
+            color: #c49a6c;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author p {
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #c49a6c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .group-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .group-badge, .teacher-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: #f8f9fa;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2c3e50;
+            border: 1px solid #e9ecef;
+        }
+
+        .group-badge i, .teacher-badge i {
+            color: #c49a6c;
+        }
+
+        .group-badge {
+            background: #c49a6c;
+            color: white;
+        }
+
+        .group-badge i {
+            color: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .team-card.leader {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2632 100%);
+            color: white;
+            border: 2px solid #c49a6c;
+        }
+
+        .team-card.leader .team-icon {
+            background: rgba(196,154,108,0.2);
+        }
+
+        .team-card.leader .team-icon i {
+            color: #c49a6c;
+        }
+
+        .team-card.leader h3 {
+            color: white;
+        }
+
+        .team-card.leader .team-role {
+            color: #c49a6c;
+        }
+
+        .team-card.leader .team-bio {
+            color: #adb5bd;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #c49a6c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .team-icon {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .team-icon i {
+            font-size: 2.5rem;
+            color: #c49a6c;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .team-role {
+            color: #c49a6c;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .team-bio {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            color: #adb5bd;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .team-social a:hover {
+            color: #c49a6c;
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c49a6c 0%, #8b6b42 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 998;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .rooms-grid,
-            .amenities-grid,
-            .testimonials-grid,
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .booking-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .restaurant {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-title {
-                font-size: 3.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
+        @media (max-width: 992px) {
             .nav-links {
                 display: none;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                z-index: 999;
             }
-            
-            .nav-links.active {
+            .hamburger {
                 display: flex;
             }
-            
-            .rooms-grid,
-            .amenities-grid,
-            .testimonials-grid,
-            .footer-grid {
+            .header {
+                padding-top: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .rooms-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .booking-grid {
+            .team-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .hero-title {
-                font-size: 2.5rem;
+            .submission-text h3 {
+                font-size: 1rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
+            .submission-text p {
+                font-size: 0.8rem;
             }
-            
-            .booking-bar {
-                margin: 20px auto;
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo h2 {
+                font-size: 1.2rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .btn-cta {
+                padding: 12px 25px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="hotel-logo">
-                <div class="logo-icon">🏨</div>
-                <div class="logo-text">
-                    <h1>GRAND EVEREST</h1>
-                    <p>LUXURY HOTEL & SUITES</p>
-                </div>
+    <!-- FIXED NAVIGATION WITH HAMBURGER -->
+    <nav class="fixed-nav" id="fixedNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-hotel"></i> Grand Everest</h2>
             </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#rooms">Rooms</a></li>
-                <li><a href="#amenities">Amenities</a></li>
-                <li><a href="#dining">Dining</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#" onclick="scrollToSection('home'); return false;" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" onclick="scrollToSection('rooms'); return false;"><i class="fas fa-bed"></i> Rooms</a></li>
+                <li><a href="#" onclick="scrollToSection('amenities'); return false;"><i class="fas fa-spa"></i> Amenities</a></li>
+                <li><a href="#" onclick="scrollToSection('team'); return false;"><i class="fas fa-users"></i> Team</a></li>
+                <li><a href="#" onclick="scrollToSection('contact'); return false;"><i class="fas fa-phone"></i> Contact</a></li>
                 <li><a href="guest-login.html" class="btn-reserve">Book Now</a></li>
             </ul>
-        </nav>
-    </header>
-    
-    <section class="hero" id="home">
-        <div class="hero-slider">
-            <div class="slide slide-1 active"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
-            <div class="hero-overlay"></div>
+
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        
-        <div class="hero-content">
-            <div class="hero-subtitle">WELCOME TO LUXURY</div>
-            <h1 class="hero-title">Grand Everest Hotel</h1>
-            <p class="hero-description">Experience unparalleled luxury in the heart of Addis Ababa. Where Ethiopian hospitality meets world-class comfort.</p>
-            <div class="hero-buttons">
-                <a href="#rooms" class="hero-btn hero-btn-primary">View Rooms</a>
-                <a href="#contact" class="hero-btn hero-btn-outline">Contact Us</a>
-            </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <i class="fas fa-hotel"></i> Grand Everest
         </div>
-    </section>
-    
-    <div class="booking-bar">
-        <div class="booking-grid">
-            <div class="booking-field">
-                <label>CHECK IN</label>
-                <input type="date" value="2026-03-15">
-            </div>
-            <div class="booking-field">
-                <label>CHECK OUT</label>
-                <input type="date" value="2026-03-18">
-            </div>
-            <div class="booking-field">
-                <label>GUESTS</label>
-                <select>
-                    <option>1 Guest</option>
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4 Guests</option>
-                </select>
-            </div>
-            <div class="booking-field">
-                <label>ROOM TYPE</label>
-                <select>
-                    <option>Standard Room</option>
-                    <option>Deluxe Room</option>
-                    <option>Executive Suite</option>
-                    <option>Presidential Suite</option>
-                </select>
-            </div>
-        </div>
-        <button class="booking-btn" style="margin-top: 20px; width: 100%; padding: 15px;">Check Availability</button>
+        <button class="close-menu" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="scrollToSection('home'); closeMobileMenu(); return false;"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" onclick="scrollToSection('rooms'); closeMobileMenu(); return false;"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li><a href="#" onclick="scrollToSection('amenities'); closeMobileMenu(); return false;"><i class="fas fa-spa"></i> Amenities</a></li>
+            <li><a href="#" onclick="scrollToSection('team'); closeMobileMenu(); return false;"><i class="fas fa-users"></i> Team</a></li>
+            <li><a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;"><i class="fas fa-phone"></i> Contact</a></li>
+        </ul>
     </div>
-    
-    <section class="rooms-section" id="rooms">
-        <div class="section-header">
-            <div class="section-subtitle">LUXURY ACCOMMODATIONS</div>
-            <h2 class="section-title">Our Rooms & Suites</h2>
-            <p class="section-description">Experience the finest accommodations in Addis Ababa, designed for your ultimate comfort and relaxation.</p>
-        </div>
-        
-        <div class="rooms-grid">
-            <!-- Room 1 - Standard -->
-            <div class="room-card">
-                <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-                    <div class="room-badge">POPULAR</div>
-                </div>
-                <div class="room-info">
-                    <h3 class="room-title">Standard Room</h3>
-                    <div class="room-features">
-                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
-                        <span><i class="fas fa-tv"></i> Smart TV</span>
-                        <span><i class="fas fa-snowflake"></i> AC</span>
-                    </div>
-                    <div class="room-price">$89 <span>/ night</span></div>
-                    <button class="room-btn">Book Now</button>
-                </div>
-            </div>
-            
-            <!-- Room 2 - Deluxe -->
-            <div class="room-card">
-                <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-                    <div class="room-badge">BEST VALUE</div>
-                </div>
-                <div class="room-info">
-                    <h3 class="room-title">Deluxe Room</h3>
-                    <div class="room-features">
-                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
-                        <span><i class="fas fa-coffee"></i> Breakfast</span>
-                        <span><i class="fas fa-bath"></i> Jacuzzi</span>
-                    </div>
-                    <div class="room-price">$149 <span>/ night</span></div>
-                    <button class="room-btn">Book Now</button>
-                </div>
-            </div>
-            
-            <!-- Room 3 - Executive Suite -->
-            <div class="room-card">
-                <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-                    <div class="room-badge">LUXURY</div>
-                </div>
-                <div class="room-info">
-                    <h3 class="room-title">Executive Suite</h3>
-                    <div class="room-features">
-                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
-                        <span><i class="fas fa-utensils"></i> Room Service</span>
-                        <span><i class="fas fa-spa"></i> Spa Access</span>
-                    </div>
-                    <div class="room-price">$249 <span>/ night</span></div>
-                    <button class="room-btn">Book Now</button>
-                </div>
+
+    <!-- HEADER SECTION -->
+    <section id="home" class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>WELCOME TO <span>LUXURY</span></h1>
+                <h1 style="font-size: 3rem;">Grand Everest Hotel</h1>
+                <p>Experience unparalleled luxury in the heart of Addis Ababa. Where Ethiopian hospitality meets world-class comfort.</p>
             </div>
         </div>
     </section>
-    
-    <section class="amenities" id="amenities">
-        <div class="section-header">
-            <div class="section-subtitle" style="color: #d4af37;">HOTEL FEATURES</div>
-            <h2 class="section-title" style="color: white;">World-Class Amenities</h2>
-            <p class="section-description" style="color: rgba(255,255,255,0.8);">Every detail carefully curated for your exceptional stay</p>
-        </div>
-        
-        <div class="amenities-grid">
-            <div class="amenity-card">
-                <i class="fas fa-swimming-pool"></i>
-                <h3>Infinity Pool</h3>
-                <p>Panoramic city views from our heated pool</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-spa"></i>
-                <h3>Luxury Spa</h3>
-                <p>Traditional Ethiopian treatments</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-dumbbell"></i>
-                <h3>Fitness Center</h3>
-                <p>State-of-the-art equipment</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-utensils"></i>
-                <h3>Fine Dining</h3>
-                <p>International & Ethiopian cuisine</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-wifi"></i>
-                <h3>High-Speed WiFi</h3>
-                <p>Complimentary throughout</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-car"></i>
-                <h3>Valet Parking</h3>
-                <p>24/7 secure parking</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-concierge-bell"></i>
-                <h3>Concierge</h3>
-                <p>Personalized service</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-plane"></i>
-                <h3>Airport Shuttle</h3>
-                <p>Luxury transfers</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="restaurant" id="dining">
-        <div class="restaurant-image"></div>
-        <div class="restaurant-content">
-            <div class="section-subtitle">FINE DINING</div>
-            <h2>Blue Nile Restaurant</h2>
-            <p>Experience an exquisite culinary journey featuring the finest Ethiopian and international cuisine. Our award-winning chefs prepare each dish with passion and creativity.</p>
-            
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h4>Ethiopian Coffee Ceremony</h4>
-                    <p>$15</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Kitfo (Traditional)</h4>
-                    <p>$28</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Grilled Lamb Chops</h4>
-                    <p>$35</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Seafood Platter</h4>
-                    <p>$45</p>
-                </div>
-            </div>
-            
-            <button class="room-btn" style="margin-top: 30px; width: auto; padding: 15px 40px;">View Full Menu</button>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <div class="section-header">
-            <div class="section-subtitle">GUEST EXPERIENCES</div>
-            <h2 class="section-title">What Our Guests Say</h2>
-        </div>
-        
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Absolutely breathtaking! The service was impeccable and the views from our suite were unforgettable. The Ethiopian coffee ceremony was a highlight."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
-                    <div class="author-info">
-                        <h4>Sarah Johnson</h4>
-                        <p>United Kingdom</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The perfect blend of modern luxury and Ethiopian tradition. The staff went above and beyond to make our stay special. Will definitely return!"</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">M</div>
-                    <div class="author-info">
-                        <h4>Michael Chen</h4>
-                        <p>USA</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Best hotel in Addis Ababa! The infinity pool overlooking the city is spectacular. The food at Blue Nile Restaurant is world-class."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">A</div>
-                    <div class="author-info">
-                        <h4>Abebe Kebede</h4>
-                        <p>Ethiopia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta">
-        <h2>Experience Luxury</h2>
-        <p>Book your stay at Grand Everest Hotel today</p>
-        <a href="guest-login.html" class="cta-btn">Make a Reservation</a>
-    </section>
-    <!-- ===== OUR TEAM SECTION ===== -->
-<section class="team-section">
+
     <div class="container">
-        <div class="section-header">
-            <h2>Behind The <span class="highlight">Luxury</span></h2>
-            <p>Meet the talented team who built this experience</p>
-            <div class="title-shape"></div>
-            <div class="group-info">
-                <span class="group-badge"><i class="fas fa-users"></i> Grade 11NC - Group 3</span>
-                <span class="teacher-badge"><i class="fas fa-chalkboard-user"></i> Submitted to Mr. Enyew</span>
-            </div>
-        </div>
-
-        <div class="team-grid">
-            <!-- Group Leader - Mersimoy -->
-            <div class="team-card leader">
-                <div class="card-badge">👑 TEAM LEADER</div>
-                <div class="team-icon">
-                    <i class="fas fa-crown"></i>
+        <!-- SUBMISSION BANNER -->
+        <div class="submission-banner">
+            <div class="submission-content">
+                <div class="submission-icon">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-                <h3>MERSIMOY</h3>
-                <p class="team-role">Group Leader & Project Director</p>
-                <p class="team-bio">Leading the team with vision and excellence. Ensuring every detail meets the highest standards.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                </div>
-            </div>
-
-            <!-- Tofik -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>TOFIK</h3>
-                <p class="team-role">Web Developer</p>
-                <p class="team-bio">Full-stack developer bringing the website to life with clean code and responsive design.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                </div>
-            </div>
-
-            <!-- Lidya -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3>LIDYA</h3>
-                <p class="team-role">UI/UX Designer</p>
-                <p class="team-bio">Crafting beautiful interfaces that deliver exceptional user experiences.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-behance"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                </div>
-            </div>
-
-            <!-- Samia -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>SAMIA</h3>
-                <p class="team-role">Content Manager</p>
-                <p class="team-bio">Creating compelling content that tells the Grand Everest story beautifully.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-
-            <!-- Summer -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>SUMMER</h3>
-                <p class="team-role">Frontend Developer</p>
-                <p class="team-bio">Making the website shine on every device with responsive design.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-codepen"></i></a>
-                </div>
-            </div>
-
-            <!-- Bisrat -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3>BISRAT</h3>
-                <p class="team-role">Backend Developer</p>
-                <p class="team-bio">Building the robust systems that power the booking experience.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-python"></i></a>
-                </div>
-            </div>
-
-            <!-- Emran -->
-            <div class="team-card">
-                <div class="team-icon">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <h3>EMRAN</h3>
-                <p class="team-role">QA & Testing</p>
-                <p class="team-bio">Ensuring every feature works flawlessly before you see it.</p>
-                <div class="team-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-bug"></i></a>
+                <div class="submission-text">
+                    <h3>🎓 Grade 11NC Project | Group 3</h3>
+                    <p>Submitted to <strong>Mr. Enyew</strong> | Hotel Management System</p>
+                    <p class="submission-members">Developed by: Mersimoy (Leader), Tofik, Lidya, Samia, Summer, Bisrat, Emran</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
-    
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Grand Everest Hotel</h3>
-                <p>5-star luxury in the heart of Addis Ababa. Where Ethiopian hospitality meets world-class comfort.</p>
+
+    <!-- ROOMS SECTION -->
+    <section id="rooms" class="rooms">
+        <div class="container">
+            <div class="section-header">
+                <h2>LUXURY <span class="highlight">ACCOMMODATIONS</span></h2>
+                <p>Experience the finest accommodations in Addis Ababa, designed for your ultimate comfort and relaxation.</p>
+                <div class="title-shape"></div>
             </div>
-            
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="#amenities">Amenities</a></li>
-                    <li><a href="#dining">Dining</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Bole Road, Addis Ababa</li>
-                    <li><i class="fas fa-phone"></i> +251 11 554 4332</li>
-                    <li><i class="fas fa-envelope"></i> info@grandeverest.com</li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                </ul>
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image"><i class="fas fa-bed"></i></div>
+                    <div class="room-info">
+                        <span class="badge">POPULAR</span>
+                        <h3>Standard Room</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span><i class="fas fa-tv"></i> Smart TV</span>
+                            <span><i class="fas fa-wind"></i> AC</span>
+                        </div>
+                        <div class="room-price">$89 <span>/ night</span></div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image"><i class="fas fa-couch"></i></div>
+                    <div class="room-info">
+                        <span class="badge">BEST VALUE</span>
+                        <h3>Deluxe Room</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span><i class="fas fa-coffee"></i> Breakfast</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                        </div>
+                        <div class="room-price">$149 <span>/ night</span></div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image"><i class="fas fa-crown"></i></div>
+                    <div class="room-info">
+                        <span class="badge">LUXURY</span>
+                        <h3>Executive Suite</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span><i class="fas fa-concierge-bell"></i> Room Service</span>
+                            <span><i class="fas fa-spa"></i> Spa Access</span>
+                        </div>
+                        <div class="room-price">$249 <span>/ night</span></div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>© 2026 Grand Everest Hotel. All rights reserved. | Luxury in Every Detail</p>
+    </section>
+
+    <!-- AMENITIES SECTION -->
+    <section id="amenities" class="amenities">
+        <div class="container">
+            <div class="section-header">
+                <h2>HOTEL <span class="highlight">FEATURES</span></h2>
+                <p>Every detail carefully curated for your exceptional stay</p>
+                <div class="title-shape"></div>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-card"><i class="fas fa-swimming-pool"></i><h3>Infinity Pool</h3><p>Panoramic city views from our heated pool</p></div>
+                <div class="amenity-card"><i class="fas fa-spa"></i><h3>Luxury Spa</h3><p>Traditional Ethiopian treatments</p></div>
+                <div class="amenity-card"><i class="fas fa-dumbbell"></i><h3>Fitness Center</h3><p>State-of-the-art equipment</p></div>
+                <div class="amenity-card"><i class="fas fa-utensils"></i><h3>Fine Dining</h3><p>International & Ethiopian cuisine</p></div>
+                <div class="amenity-card"><i class="fas fa-wifi"></i><h3>High-Speed WiFi</h3><p>Complimentary throughout</p></div>
+                <div class="amenity-card"><i class="fas fa-car"></i><h3>Valet Parking</h3><p>24/7 secure parking</p></div>
+                <div class="amenity-card"><i class="fas fa-concierge-bell"></i><h3>Concierge</h3><p>Personalized service</p></div>
+                <div class="amenity-card"><i class="fas fa-shuttle-van"></i><h3>Airport Shuttle</h3><p>Luxury transfers</p></div>
+            </div>
         </div>
-    </footer>
-    
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>GUEST <span class="highlight">EXPERIENCES</span></h2>
+                <p>What Our Guests Say</p>
+                <div class="title-shape"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"Absolutely breathtaking! The service was impeccable and the views from our suite were unforgettable. The Ethiopian coffee ceremony was a highlight."</p><div class="testimonial-author"><h4>Sarah Johnson</h4><p>United Kingdom</p></div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"The perfect blend of modern luxury and Ethiopian tradition. The staff went above and beyond to make our stay special. Will definitely return!"</p><div class="testimonial-author"><h4>Michael Chen</h4><p>USA</p></div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"Best hotel in Addis Ababa! The infinity pool overlooking the city is spectacular. The food at Blue Nile Restaurant is world-class."</p><div class="testimonial-author"><h4>Abebe Kebede</h4><p>Ethiopia</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Behind The <span class="highlight">Luxury</span></h2>
+                <p>Meet the talented team who built this experience</p>
+                <div class="title-shape"></div>
+                <div class="group-info">
+                    <span class="group-badge"><i class="fas fa-users"></i> Grade 11NC - Group 3</span>
+                    <span class="teacher-badge"><i class="fas fa-chalkboard-user"></i> Submitted to Mr. Enyew</span>
+                </div>
+            </div>
+            <div class="team-grid">
+                <div class="team-card leader"><div class="card-badge">👑 TEAM LEADER</div><div class="team-icon"><i class="fas fa-crown"></i></div><h3>MERSIMOY</h3><p class="team-role">Group Leader & Project Director</p><p class="team-bio">Leading the team with vision and excellence. Ensuring every detail meets the highest standards.</p><div class="team-social"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-code"></i></div><h3>TOFIK</h3><p class="team-role">Web Developer</p><p class="team-bio">Full-stack developer bringing the website to life with clean code and responsive design.</p><div class="team-social"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-palette"></i></div><h3>LIDYA</h3><p class="team-role">UI/UX Designer</p><p class="team-bio">Crafting beautiful interfaces that deliver exceptional user experiences.</p><div class="team-social"><a href="#"><i class="fab fa-behance"></i></a><a href="#"><i class="fab fa-dribbble"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-chart-line"></i></div><h3>SAMIA</h3><p class="team-role">Content Manager</p><p class="team-bio">Creating compelling content that tells the Grand Everest story beautifully.</p><div class="team-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-mobile-alt"></i></div><h3>SUMMER</h3><p class="team-role">Frontend Developer</p><p class="team-bio">Making the website shine on every device with responsive design.</p><div class="team-social"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-codepen"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-database"></i></div><h3>BISRAT</h3><p class="team-role">Backend Developer</p><p class="team-bio">Building the robust systems that power the booking experience.</p><div class="team-social"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-python"></i></a></div></div>
+                <div class="team-card"><div class="team-icon"><i class="fas fa-camera"></i></div><h3>EMRAN</h3><p class="team-role">QA & Testing</p><p class="team-bio">Ensuring every feature works flawlessly before you see it.</p><div class="team-social"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fas fa-bug"></i></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Experience Luxury</h2>
+            <p>Book your stay at Grand Everest Hotel today</p>
+            <a href="#" class="btn-cta">Make a Reservation</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <p><i class="fas fa-hotel"></i> Grand Everest Hotel | Luxury Redefined</p>
+            <p>📍 Addis Ababa, Ethiopia | 📞 +251 912 345 678 | ✉️ info@grandeverest.com</p>
+            <p>🎓 Grade 11NC Project | Group 3 | Submitted to Mr. Enyew</p>
+            <p>Developed by: Mersimoy (Leader), Tofik, Lidya, Samia, Summer, Bisrat, Emran</p>
+            <p><i class="fas fa-code"></i> Built with Love by Grade 11NC Students | All Rights Reserved</p>
+        </div>
+    </div>
+
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script>
-        // Mobile menu toggle
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.className = 'fas fa-times';
-            } else {
-                icon.className = 'fas fa-bars';
-            }
-        });
-        
-        // Hero slider
-        let slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+        // Mobile Menu Functions
+        function openMobileMenu() {
+            document.getElementById('mobileNav').classList.add('active');
+            document.getElementById('mobileOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('hamburgerBtn').classList.add('active');
         }
-        
-        setInterval(nextSlide, 5000);
-        
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('hamburgerBtn').classList.remove('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if(section) {
+                const offset = 80;
+                const position = section.offsetTop - offset;
+                window.scrollTo({ top: position, behavior: 'smooth' });
+            }
+            updateActiveNav(sectionId);
+        }
+
+        function updateActiveNav(sectionId) {
+            document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('onclick') && link.getAttribute('onclick').includes(sectionId)) {
+                    link.classList.add('active');
                 }
             });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Event Listeners
+        document.getElementById('hamburgerBtn').addEventListener('click', openMobileMenu);
+        document.getElementById('closeMenuBtn').addEventListener('click', closeMobileMenu);
+        document.getElementById('mobileOverlay').addEventListener('click', closeMobileMenu);
+
+        // Fixed Nav Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('fixedNav');
+            const scrollBtn = document.getElementById('scrollTop');
+            
+            if(window.scrollY > 100) {
+                nav.classList.add('scrolled');
+                scrollBtn.classList.add('show');
+            } else {
+                nav.classList.remove('scrolled');
+                scrollBtn.classList.remove('show');
+            }
         });
     </script>
 </body>
